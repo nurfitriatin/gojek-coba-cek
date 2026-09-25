@@ -1,0 +1,2513 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>For Your New Chapter</title>
+
+
+    <!-- =====================================================
+         FONT
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    color: #f5f0df;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 8% 10%,
+            rgba(216,180,74,.16),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 94% 88%,
+            rgba(216,180,74,.13),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #020202 0%,
+            #090909 48%,
+            #151108 75%,
+            #2c2105 100%
+        );
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page {
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+
+/* =========================================================
+   MAIN FRAME
+========================================================= */
+
+.chapter-card {
+
+    position: relative;
+
+    width: min(
+        1080px,
+        calc(100vw - 40px)
+    );
+
+    height: min(
+        700px,
+        calc(100vh - 40px)
+    );
+
+    min-height: 640px;
+
+    display: grid;
+
+    grid-template-rows:
+        68px
+        125px
+        115px
+        1fr
+        70px;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(216,180,74,.07),
+            transparent 42%
+        ),
+
+        linear-gradient(
+            145deg,
+            #111111 0%,
+            #090909 55%,
+            #171208 100%
+        );
+
+    border:
+        1px solid
+        rgba(216,180,74,.72);
+
+    box-shadow:
+
+        0 30px 80px
+        rgba(0,0,0,.70),
+
+        0 0 45px
+        rgba(216,180,74,.09);
+}
+
+
+/* =========================================================
+   INNER FRAME
+========================================================= */
+
+.chapter-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border:
+        1px solid
+        rgba(216,180,74,.18);
+
+    border-radius: 20px;
+
+    pointer-events: none;
+
+    z-index: 80;
+}
+
+
+/* =========================================================
+   DECORATIVE GOLD DOT
+========================================================= */
+
+.gold-dot {
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #d8b44a;
+
+    box-shadow:
+        0 0 12px
+        rgba(216,180,74,.7);
+
+    z-index: 5;
+}
+
+
+.dot-1 {
+    top: 115px;
+    left: 75px;
+}
+
+
+.dot-2 {
+    top: 175px;
+    right: 80px;
+}
+
+
+.dot-3 {
+    bottom: 115px;
+    left: 80px;
+}
+
+
+.dot-4 {
+    bottom: 120px;
+    right: 80px;
+}
+
+
+/* =========================================================
+   STICKER SYSTEM
+========================================================= */
+
+.sticker {
+
+    position: absolute;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    user-select: none;
+
+    pointer-events: none;
+
+    z-index: 4;
+
+    filter:
+        drop-shadow(
+            0 8px 10px
+            rgba(0,0,0,.35)
+        );
+
+    animation:
+        stickerFloat
+        4s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   STICKER 1 - STAR
+========================================================= */
+
+.sticker-star {
+
+    top: 220px;
+
+    right: 55px;
+
+    font-size: 31px;
+
+    color: #d8b44a;
+
+    transform:
+        rotate(12deg);
+}
+
+
+/* =========================================================
+   STICKER 2 - HEART
+========================================================= */
+
+.sticker-heart {
+
+    top: 290px;
+
+    left: 48px;
+
+    font-size: 24px;
+
+    color: #c99b37;
+
+    transform:
+        rotate(-12deg);
+
+    animation-delay:
+        .7s;
+}
+
+
+/* =========================================================
+   STICKER 3 - FLOWER
+========================================================= */
+
+.sticker-flower {
+
+    bottom: 150px;
+
+    right: 47px;
+
+    font-size: 28px;
+
+    color: #d8b44a;
+
+    transform:
+        rotate(8deg);
+
+    animation-delay:
+        1.2s;
+}
+
+
+/* =========================================================
+   STICKER 4 - SPARKLE
+========================================================= */
+
+.sticker-sparkle {
+
+    top: 365px;
+
+    left: 70px;
+
+    font-size: 22px;
+
+    color: #f0d477;
+
+    transform:
+        rotate(-8deg);
+
+    animation-delay:
+        1.8s;
+}
+
+
+/* =========================================================
+   STICKER 5 - SMALL STAR
+========================================================= */
+
+.sticker-small-star {
+
+    bottom: 170px;
+
+    left: 250px;
+
+    font-size: 18px;
+
+    color: #a9822c;
+
+    animation-delay:
+        2.3s;
+}
+
+
+/* =========================================================
+   STICKER 6 - MINI HEART
+========================================================= */
+
+.sticker-mini-heart {
+
+    top: 395px;
+
+    right: 330px;
+
+    font-size: 16px;
+
+    color: #d8b44a;
+
+    animation-delay:
+        2.8s;
+}
+
+
+/* =========================================================
+   STICKER 7 - CIRCLE
+========================================================= */
+
+.sticker-circle {
+
+    bottom: 175px;
+
+    right: 330px;
+
+    width: 17px;
+    height: 17px;
+
+    border:
+        2px solid
+        rgba(216,180,74,.65);
+
+    border-radius: 50%;
+
+    animation-delay:
+        1.5s;
+}
+
+
+/* =========================================================
+   STICKER 8 - PLUS
+========================================================= */
+
+.sticker-plus {
+
+    top: 275px;
+
+    right: 370px;
+
+    font-size: 18px;
+
+    color: #b58b2f;
+
+    animation-delay:
+        3s;
+}
+
+
+/* =========================================================
+   STICKER ANIMATION
+========================================================= */
+
+@keyframes stickerFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-5px)
+            rotate(4deg);
+    }
+}
+
+
+/* =========================================================
+   TOP NAVIGATION
+========================================================= */
+
+.top-nav {
+
+    position: relative;
+
+    height: 68px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 32px;
+
+    padding:
+        0 48px;
+
+    border-bottom:
+        1px solid
+        rgba(216,180,74,.14);
+
+    z-index: 100;
+}
+
+
+/* =========================================================
+   PAGE NUMBER
+========================================================= */
+
+.page-number {
+
+    position: absolute;
+
+    left: 38px;
+
+    top: 18px;
+
+    padding:
+        7px 14px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(216,180,74,.11);
+
+    border:
+        1px solid
+        rgba(216,180,74,.40);
+
+    color:
+        #d8b44a;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   NAV LINK
+========================================================= */
+
+.nav-link {
+
+    color:
+        rgba(245,240,223,.68);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    transition: .25s;
+}
+
+
+.nav-link:hover {
+
+    color:
+        #d8b44a;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu-button {
+
+    position: relative;
+
+    width: 22px;
+    height: 22px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+.menu-button::before,
+.menu-button::after,
+.menu-button span {
+
+    content: "";
+
+    position: absolute;
+
+    left: 3px;
+
+    width: 16px;
+    height: 2px;
+
+    border-radius: 5px;
+
+    background:
+        #d8b44a;
+}
+
+
+.menu-button::before {
+    top: 4px;
+}
+
+
+.menu-button span {
+    top: 10px;
+}
+
+
+.menu-button::after {
+    top: 16px;
+}
+
+
+/* =========================================================
+   TITLE AREA
+========================================================= */
+
+.title-area {
+
+    position: relative;
+
+    height: 125px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        8px 70px 0;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   BRACKET
+========================================================= */
+
+.left-parenthesis {
+
+    position: absolute;
+
+    left: 43px;
+
+    top: 35px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 44px;
+
+    color:
+        #d8b44a;
+
+    opacity: .55;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.chapter-title {
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size:
+        clamp(48px, 5vw, 64px);
+
+    line-height: .83;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+    color:
+        #f5f0df;
+
+    transform:
+        rotate(-3deg);
+}
+
+
+.chapter-title span {
+
+    display: block;
+}
+
+
+.chapter-title span:last-child {
+
+    margin-left: 68px;
+
+    margin-top: 7px;
+
+    color:
+        #d8b44a;
+}
+
+
+/* =========================================================
+   PAPER PLANE
+========================================================= */
+
+.paper-plane {
+
+    position: absolute;
+
+    right: 120px;
+
+    top: 22px;
+
+    width: 65px;
+    height: 50px;
+
+    transform:
+        rotate(-12deg);
+}
+
+
+.plane-body {
+
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        45px solid transparent;
+
+    border-right:
+        8px solid transparent;
+
+    border-top:
+        7px solid #d8b44a;
+
+    transform:
+        rotate(-20deg);
+}
+
+
+.plane-line {
+
+    position: absolute;
+
+    width: 50px;
+    height: 2px;
+
+    left: 3px;
+
+    top: 20px;
+
+    background:
+        #d8b44a;
+
+    transform:
+        rotate(-29deg);
+}
+
+
+.plane-tip {
+
+    position: absolute;
+
+    width: 34px;
+    height: 2px;
+
+    left: 20px;
+
+    top: 27px;
+
+    background:
+        #d8b44a;
+
+    transform:
+        rotate(33deg);
+}
+
+
+/* =========================================================
+   FLIGHT PATH
+========================================================= */
+
+.flight-path {
+
+    position: absolute;
+
+    right: 70px;
+
+    top: 64px;
+
+    width: 90px;
+    height: 35px;
+
+    border-top:
+        1px dashed
+        rgba(216,180,74,.50);
+
+    border-radius: 50%;
+
+    transform:
+        rotate(-13deg);
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro-section {
+
+    position: relative;
+
+    height: 115px;
+
+    padding:
+        4px 70px 0;
+
+    z-index: 10;
+}
+
+
+.intro-text {
+
+    width: 58%;
+
+    font-size: 13px;
+
+    line-height: 1.58;
+
+    font-weight: 500;
+
+    color:
+        rgba(245,240,223,.75);
+}
+
+
+/* =========================================================
+   YELLOW NOTE
+========================================================= */
+
+.yellow-note {
+
+    position: absolute;
+
+    right: 70px;
+
+    top: 0;
+
+    width: 98px;
+    height: 102px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d8b44a,
+            #a77d20
+        );
+
+    color:
+        #151109;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size: 14px;
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    transform:
+        rotate(6deg);
+
+    box-shadow:
+        0 14px 25px
+        rgba(0,0,0,.40);
+
+    z-index: 20;
+}
+
+
+.yellow-note::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 29px;
+
+    top: -5px;
+
+    width: 40px;
+    height: 8px;
+
+    background:
+        rgba(245,240,223,.35);
+
+    transform:
+        rotate(-3deg);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+
+    min-height: 0;
+
+    padding:
+        20px 70px 15px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 65px;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.left-content {
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+}
+
+
+/* =========================================================
+   PHOTO CARD
+========================================================= */
+
+.photo-card {
+
+    position: relative;
+
+    width: 290px;
+
+    height: 205px;
+
+    flex-shrink: 0;
+
+    padding: 10px;
+
+    background:
+        #eee7d8;
+
+    border-radius: 7px;
+
+    transform:
+        rotate(-1.5deg);
+
+    box-shadow:
+
+        0 20px 38px
+        rgba(0,0,0,.55),
+
+        0 0 0 1px
+        rgba(216,180,74,.18);
+
+    z-index: 10;
+
+    transition:
+        .3s ease;
+}
+
+
+/* =========================================================
+   PHOTO GOLD FRAME
+========================================================= */
+
+.photo-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -9px;
+
+    border:
+        1px solid
+        rgba(216,180,74,.65);
+
+    border-radius: 10px;
+
+    transform:
+        rotate(4deg);
+
+    z-index: -1;
+}
+
+
+.photo-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -15px;
+
+    border:
+        1px solid
+        rgba(216,180,74,.20);
+
+    border-radius: 13px;
+
+    transform:
+        rotate(-4deg);
+
+    z-index: -2;
+}
+
+
+/* =========================================================
+   PHOTO TAPE
+========================================================= */
+
+.tape {
+
+    position: absolute;
+
+    left: 105px;
+
+    top: -13px;
+
+    width: 75px;
+    height: 24px;
+
+    background:
+        rgba(216,180,74,.40);
+
+    transform:
+        rotate(-3deg);
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   PHOTO FRAME
+========================================================= */
+
+.photo-frame {
+
+    width: 100%;
+
+    height: 150px;
+
+    padding: 4px;
+
+    overflow: hidden;
+
+    background:
+        #111111;
+
+    border:
+        2px solid
+        #c9a63b;
+
+    box-shadow:
+        inset 0 0 0 2px
+        #29220f;
+}
+
+
+/* =========================================================
+   PHOTO
+========================================================= */
+
+.photo-frame img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        .4s ease;
+}
+
+
+.photo-card:hover {
+
+    transform:
+        rotate(0deg)
+        translateY(-4px);
+}
+
+
+.photo-card:hover img {
+
+    transform:
+        scale(1.03);
+}
+
+
+/* =========================================================
+   PHOTO CAPTION
+========================================================= */
+
+.photo-caption {
+
+    margin-top: 8px;
+
+    text-align: center;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size: 14px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    color:
+        #18140d;
+}
+
+
+/* =========================================================
+   BOTTOM MESSAGE
+========================================================= */
+
+.bottom-message {
+
+    width: 320px;
+
+    max-width: 100%;
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size: 15px;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+
+    color:
+        rgba(245,240,223,.78);
+}
+
+
+.bottom-message strong {
+
+    color:
+        #d8b44a;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.right-content {
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    padding-top: 5px;
+}
+
+
+/* =========================================================
+   QUOTE CARD
+========================================================= */
+
+.quote-card {
+
+    position: relative;
+
+    width: 330px;
+
+    height: 215px;
+
+    padding:
+        29px 30px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.065),
+            rgba(255,255,255,.018)
+        );
+
+    border:
+        1px solid
+        rgba(216,180,74,.38);
+
+    border-radius: 19px;
+
+    transform:
+        rotate(1.5deg);
+
+    box-shadow:
+        0 22px 42px
+        rgba(0,0,0,.42);
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   QUOTE DECORATION
+========================================================= */
+
+.quote-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 23px;
+
+    left: 28px;
+
+    width: 40px;
+
+    height: 2px;
+
+    background:
+        #d8b44a;
+
+    box-shadow:
+        0 7px 0
+        rgba(216,180,74,.28);
+}
+
+
+/* =========================================================
+   QUOTE TEXT
+========================================================= */
+
+.quote-text {
+
+    margin-top: 24px;
+
+    font-family:
+        "Baloo 2",
+        cursive;
+
+    font-size: 21px;
+
+    line-height: 1.30;
+
+    font-weight: 700;
+
+    color:
+        #f4ecd9;
+}
+
+
+/* =========================================================
+   BOTTOM NAVIGATION
+========================================================= */
+
+.bottom-nav {
+
+    position: relative;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 50px;
+
+    border-top:
+        1px solid
+        rgba(216,180,74,.14);
+
+    z-index: 100;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.back-button,
+.chapter-button {
+
+    height: 37px;
+
+    border-radius: 25px;
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: .5px;
+
+    cursor: pointer;
+
+    transition:
+        .25s;
+}
+
+
+.back-button {
+
+    width: 120px;
+
+    border:
+        1px solid
+        rgba(216,180,74,.45);
+
+    background:
+        rgba(216,180,74,.06);
+
+    color:
+        #d8b44a;
+}
+
+
+.back-button:hover {
+
+    background:
+        #d8b44a;
+
+    color:
+        #15120c;
+}
+
+
+.chapter-button {
+
+    width: 150px;
+
+    border:
+        1px solid
+        rgba(216,180,74,.55);
+
+    background:
+        linear-gradient(
+            135deg,
+            #d8b44a,
+            #a77d20
+        );
+
+    color:
+        #15120c;
+}
+
+
+.chapter-button:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0d477,
+            #c49a35
+        );
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    html,
+    body {
+
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden;
+    }
+
+
+    .page {
+
+        width: 100vw;
+        height: 100dvh;
+
+        padding: 0;
+
+        display: block;
+    }
+
+
+    .chapter-card {
+
+        position: fixed;
+
+        inset: 0;
+
+        width: 100vw;
+        height: 100dvh;
+
+        min-height: 0;
+
+        display: block;
+
+        border-radius: 0;
+
+        border: none;
+
+        box-shadow: none;
+
+        overflow-y: auto;
+
+        overflow-x: hidden;
+    }
+
+
+    .chapter-card::before {
+
+        inset: 8px;
+
+        border-radius: 15px;
+    }
+
+
+    /* =====================================================
+       NAV
+    ====================================================== */
+
+    .top-nav {
+
+        height: 60px;
+
+        padding:
+            0 18px 0 70px;
+
+        gap: 12px;
+    }
+
+
+    .page-number {
+
+        left: 20px;
+
+        top: 16px;
+
+        font-size: 9px;
+    }
+
+
+    .nav-link {
+
+        font-size: 7.5px;
+    }
+
+
+    /* =====================================================
+       TITLE
+    ====================================================== */
+
+    .title-area {
+
+        height: 110px;
+
+        padding:
+            5px 22px 0;
+    }
+
+
+    .chapter-title {
+
+        font-size:
+            clamp(34px, 10vw, 45px);
+
+        letter-spacing:
+            -1px;
+    }
+
+
+    .chapter-title span:last-child {
+
+        margin-left: 25px;
+    }
+
+
+    .left-parenthesis {
+
+        left: 14px;
+
+        top: 28px;
+
+        font-size: 30px;
+    }
+
+
+    .paper-plane {
+
+        right: 27px;
+
+        top: 14px;
+
+        transform:
+            scale(.68)
+            rotate(-12deg);
+    }
+
+
+    .flight-path {
+
+        right: 7px;
+
+        top: 51px;
+
+        width: 58px;
+    }
+
+
+    /* =====================================================
+       INTRO
+    ====================================================== */
+
+    .intro-section {
+
+        height: 105px;
+
+        padding:
+            0 20px;
+    }
+
+
+    .intro-text {
+
+        width: 70%;
+
+        font-size: 9.5px;
+
+        line-height: 1.48;
+    }
+
+
+    .yellow-note {
+
+        right: 18px;
+
+        top: -2px;
+
+        width: 62px;
+
+        height: 73px;
+
+        font-size: 9px;
+    }
+
+
+    /* =====================================================
+       STICKERS MOBILE
+    ====================================================== */
+
+    .sticker-star {
+
+        top: 210px;
+
+        right: 25px;
+
+        font-size: 23px;
+    }
+
+
+    .sticker-heart {
+
+        top: 320px;
+
+        left: 20px;
+
+        font-size: 18px;
+    }
+
+
+    .sticker-flower {
+
+        bottom: 150px;
+
+        right: 22px;
+
+        font-size: 21px;
+    }
+
+
+    .sticker-sparkle {
+
+        top: 380px;
+
+        left: 24px;
+
+        font-size: 17px;
+    }
+
+
+    .sticker-small-star {
+
+        bottom: 205px;
+
+        left: 65px;
+
+        font-size: 14px;
+    }
+
+
+    .sticker-mini-heart {
+
+        top: 430px;
+
+        right: 45px;
+
+        font-size: 13px;
+    }
+
+
+    .sticker-circle {
+
+        bottom: 200px;
+
+        right: 65px;
+
+        width: 12px;
+
+        height: 12px;
+    }
+
+
+    .sticker-plus {
+
+        top: 295px;
+
+        right: 60px;
+
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       CONTENT
+    ====================================================== */
+
+    .main-content {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 20px;
+
+        padding:
+            18px 20px 100px;
+    }
+
+
+    .left-content,
+    .right-content {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    /* =====================================================
+       PHOTO
+    ====================================================== */
+
+    .photo-card {
+
+        width: 220px;
+
+        height: 170px;
+
+        padding: 9px;
+    }
+
+
+    .photo-frame {
+
+        height: 112px;
+    }
+
+
+    .photo-caption {
+
+        font-size: 11px;
+
+        margin-top: 7px;
+    }
+
+
+    .tape {
+
+        left: 77px;
+
+        width: 60px;
+
+        height: 20px;
+    }
+
+
+    .bottom-message {
+
+        width: 250px;
+
+        margin-top: 15px;
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       QUOTE
+    ====================================================== */
+
+    .quote-card {
+
+        width: 260px;
+
+        height: 165px;
+
+        padding:
+            22px 21px;
+    }
+
+
+    .quote-text {
+
+        margin-top: 18px;
+
+        font-size: 15px;
+
+        line-height: 1.3;
+    }
+
+
+    /* =====================================================
+       BOTTOM
+    ====================================================== */
+
+    .bottom-nav {
+
+        position: fixed;
+
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        height: 74px;
+
+        padding:
+            0 20px;
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(8,8,8,.05),
+                #080808
+            );
+
+        border-top:
+            1px solid
+            rgba(216,180,74,.15);
+    }
+
+
+    .back-button {
+
+        width: 100px;
+
+        height: 33px;
+
+        font-size: 8px;
+    }
+
+
+    .chapter-button {
+
+        width: 135px;
+
+        height: 33px;
+
+        font-size: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .top-nav {
+
+        height: 57px;
+
+        padding-left: 63px;
+
+        gap: 8px;
+    }
+
+
+    .page-number {
+
+        left: 15px;
+
+        top: 14px;
+    }
+
+
+    .nav-link {
+
+        font-size: 6.5px;
+    }
+
+
+    .title-area {
+
+        height: 99px;
+    }
+
+
+    .chapter-title {
+
+        font-size: 29px;
+    }
+
+
+    .intro-section {
+
+        height: 90px;
+
+        padding:
+            0 17px;
+    }
+
+
+    .intro-text {
+
+        width: 71%;
+
+        font-size: 8px;
+
+        line-height: 1.42;
+    }
+
+
+    .yellow-note {
+
+        right: 15px;
+
+        width: 55px;
+
+        height: 64px;
+
+        font-size: 8px;
+    }
+
+
+    /* =====================================================
+       STICKERS SMALL PHONE
+    ====================================================== */
+
+    .sticker-star {
+
+        top: 200px;
+
+        right: 17px;
+
+        font-size: 19px;
+    }
+
+
+    .sticker-heart {
+
+        top: 300px;
+
+        left: 15px;
+
+        font-size: 16px;
+    }
+
+
+    .sticker-flower {
+
+        bottom: 145px;
+
+        right: 17px;
+
+        font-size: 18px;
+    }
+
+
+    .sticker-sparkle {
+
+        top: 360px;
+
+        left: 18px;
+
+        font-size: 14px;
+    }
+
+
+    .sticker-small-star {
+
+        bottom: 185px;
+
+        left: 50px;
+
+        font-size: 12px;
+    }
+
+
+    .sticker-mini-heart {
+
+        top: 410px;
+
+        right: 30px;
+
+        font-size: 11px;
+    }
+
+
+    .sticker-circle {
+
+        bottom: 185px;
+
+        right: 50px;
+
+        width: 10px;
+
+        height: 10px;
+    }
+
+
+    .sticker-plus {
+
+        top: 280px;
+
+        right: 45px;
+
+        font-size: 12px;
+    }
+
+
+    /* =====================================================
+       CONTENT
+    ====================================================== */
+
+    .main-content {
+
+        padding:
+            18px 15px 95px;
+
+        gap: 18px;
+    }
+
+
+    .photo-card {
+
+        width: 195px;
+
+        height: 153px;
+    }
+
+
+    .photo-frame {
+
+        height: 101px;
+    }
+
+
+    .photo-caption {
+
+        font-size: 10px;
+    }
+
+
+    .bottom-message {
+
+        width: 220px;
+
+        font-size: 9px;
+    }
+
+
+    .quote-card {
+
+        width: 230px;
+
+        height: 148px;
+
+        padding:
+            19px 17px;
+    }
+
+
+    .quote-text {
+
+        font-size: 12.5px;
+
+        margin-top: 16px;
+    }
+
+
+    .bottom-nav {
+
+        height: 68px;
+
+        padding:
+            0 15px;
+    }
+
+
+    .back-button {
+
+        width: 88px;
+
+        height: 30px;
+
+        font-size: 7px;
+    }
+
+
+    .chapter-button {
+
+        width: 115px;
+
+        height: 30px;
+
+        font-size: 7px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <div class="chapter-card">
+
+
+        <!-- =================================================
+             GOLD DOTS
+        ================================================== -->
+
+        <div class="gold-dot dot-1"></div>
+
+        <div class="gold-dot dot-2"></div>
+
+        <div class="gold-dot dot-3"></div>
+
+        <div class="gold-dot dot-4"></div>
+
+
+
+        <!-- =================================================
+             STICKERS
+        ================================================== -->
+
+        <div class="sticker sticker-star">
+            ★
+        </div>
+
+
+        <div class="sticker sticker-heart">
+            ♥
+        </div>
+
+
+        <div class="sticker sticker-flower">
+            ✿
+        </div>
+
+
+        <div class="sticker sticker-sparkle">
+            ✦
+        </div>
+
+
+        <div class="sticker sticker-small-star">
+            ★
+        </div>
+
+
+        <div class="sticker sticker-mini-heart">
+            ♥
+        </div>
+
+
+        <div class="sticker sticker-circle">
+        </div>
+
+
+        <div class="sticker sticker-plus">
+            +
+        </div>
+
+
+
+        <!-- =================================================
+             NAVIGATION
+        ================================================== -->
+
+        <nav class="top-nav">
+
+
+         
+            <a
+                href="awal.html"
+                class="nav-link">
+
+                Home
+
+            </a>
+
+
+            <a
+                href="3.html"
+                class="nav-link">
+
+                Massage
+
+            </a>
+
+
+            <a
+                href="6.html"
+                class="nav-link">
+
+                Surprise
+
+            </a>
+
+
+       
+
+        </nav>
+
+
+
+        <!-- =================================================
+             TITLE
+        ================================================== -->
+
+        <section class="title-area">
+
+
+            <div class="left-parenthesis">
+            </div>
+
+
+            <div class="chapter-title">
+
+                <span>
+                    For Your
+                </span>
+
+                <span>
+                    New Chapter
+                </span>
+
+            </div>
+
+
+            <div class="paper-plane">
+
+                <div class="plane-body"></div>
+
+                <div class="plane-line"></div>
+
+                <div class="plane-tip"></div>
+
+            </div>
+
+
+            <div class="flight-path"></div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             INTRODUCTION
+        ================================================== -->
+
+        <section class="intro-section">
+
+
+            <div class="intro-text">
+
+                New age, new stories, new opportunities.
+
+                <br>
+
+                Semoga tahun ini kamu menemukan
+
+                <br>
+
+                lebih banyak hal yang bikin kamu bahagia,
+
+                <br>
+
+                bertemu dengan hal-hal baik, dan semakin
+
+                <br>
+
+                dekat dengan semua impian yang ingin
+
+                <br>
+
+                kamu capai.
+
+            </div>
+
+
+            <div class="yellow-note">
+
+                HAPPY
+
+                <br>
+
+                BIRTHDAY
+
+                <br>
+
+                TO YOU!
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 PHOTO
+            ================================================== -->
+
+            <section class="left-content">
+
+
+                <div class="photo-card">
+
+
+                    <div class="tape"></div>
+
+
+                    <div class="photo-frame">
+
+                        <img
+                            id="chapterPhoto"
+                            src="/foto/laptop.jpg"
+                            alt="Mas Ivan">
+
+                    </div>
+
+
+                    <div class="photo-caption">
+
+                        lucuuuuk kan
+
+                     
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="bottom-message">
+
+                    <strong>
+                        Semoga diumur baru ini membawa
+                    </strong>
+
+                    <br>
+
+                    banyak kebaikan
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 QUOTE
+            ================================================== -->
+
+            <section class="right-content">
+
+
+                <div class="quote-card">
+
+
+                    <div class="quote-text">
+
+                        “Lakukan
+
+                        <br>
+
+                        hal-hal baik,
+
+                        <br>
+
+                        di waktu yang tepat,
+
+                        <br>
+
+                        dengan versi terbaik
+
+                        <br>
+
+                        dari diri kamu sendiri”
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =================================================
+             BOTTOM NAVIGATION
+        ================================================== -->
+
+        <div class="bottom-nav">
+
+
+            <button
+                type="button"
+                class="back-button"
+                onclick="goBack()">
+
+                ← BACK
+
+            </button>
+
+
+            <button
+                type="button"
+                class="chapter-button"
+                onclick="nextPage()">
+
+                NEXT MASS →
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+function goBack() {
+
+    window.location.href = "3.html";
+
+}
+
+
+/* =========================================================
+   NEXT BUTTON
+========================================================= */
+
+function nextPage() {
+
+    window.location.href = "5.html";
+
+}
+
+
+/* =========================================================
+   PHOTO FALLBACK
+========================================================= */
+
+const chapterPhoto =
+    document.getElementById(
+        "chapterPhoto"
+    );
+
+
+const photoList = [
+
+    "foto/gbt_3.jpg",
+
+    "foto/gbt_2.jpg",
+
+    "foto/gbt_1.jpg"
+
+];
+
+
+let photoIndex = 0;
+
+
+chapterPhoto.addEventListener(
+    "error",
+    function () {
+
+        photoIndex++;
+
+
+        if (
+            photoIndex <
+            photoList.length
+        ) {
+
+            chapterPhoto.src =
+                photoList[photoIndex];
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Okay, This One Is Important!</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+
+        /* =====================================================
+           BODY
+        ===================================================== */
+
+        body {
+            min-height: 100vh;
+
+            font-family: "Plus Jakarta Sans", sans-serif;
+
+            color: #f6efdc;
+
+            background:
+                radial-gradient(
+                    circle at 15% 15%,
+                    rgba(190, 150, 45, .14),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(190, 150, 45, .12),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #050505 0%,
+                    #10100e 48%,
+                    #050505 100%
+                );
+
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+           PAGE
+        ===================================================== */
+
+        .page {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 25px;
+        }
+
+
+        /* =====================================================
+           MAIN DESKTOP FRAME
+        ===================================================== */
+
+        .important-card {
+            position: relative;
+
+            width: min(1080px, calc(100vw - 50px));
+            height: min(700px, calc(100vh - 50px));
+
+            min-height: 650px;
+
+            overflow: hidden;
+
+            border-radius: 26px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(220, 180, 70, .08),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    145deg,
+                    #10100f,
+                    #080808 55%,
+                    #11100d
+                );
+
+            border: 1px solid rgba(220, 180, 70, .75);
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, .65),
+                0 0 35px rgba(212, 168, 55, .08);
+
+            isolation: isolate;
+        }
+
+
+        /* INNER GOLD FRAME */
+
+        .important-card::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 13px;
+
+            border: 1px solid rgba(216, 178, 66, .32);
+
+            border-radius: 19px;
+
+            pointer-events: none;
+
+            z-index: 50;
+        }
+
+
+        .important-card::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 20px;
+
+            border: 1px solid rgba(216, 178, 66, .09);
+
+            border-radius: 15px;
+
+            pointer-events: none;
+
+            z-index: 49;
+        }
+
+
+        /* =====================================================
+           GOLD CORNER DETAILS
+        ===================================================== */
+
+        .corner {
+            position: absolute;
+
+            width: 28px;
+            height: 28px;
+
+            border-color: #cba63e;
+
+            opacity: .8;
+
+            z-index: 60;
+        }
+
+
+        .corner-tl {
+            top: 30px;
+            left: 30px;
+
+            border-top: 2px solid;
+            border-left: 2px solid;
+        }
+
+
+        .corner-tr {
+            top: 30px;
+            right: 30px;
+
+            border-top: 2px solid;
+            border-right: 2px solid;
+        }
+
+
+        .corner-bl {
+            bottom: 30px;
+            left: 30px;
+
+            border-bottom: 2px solid;
+            border-left: 2px solid;
+        }
+
+
+        .corner-br {
+            bottom: 30px;
+            right: 30px;
+
+            border-bottom: 2px solid;
+            border-right: 2px solid;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        .top-nav {
+            position: relative;
+
+            height: 70px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-end;
+
+            gap: 32px;
+
+            padding: 0 45px;
+
+            z-index: 100;
+        }
+
+
+        .page-number {
+            position: absolute;
+
+            left: 42px;
+            top: 24px;
+
+            padding: 7px 14px;
+
+            border: 1px solid rgba(216, 178, 66, .65);
+
+            border-radius: 20px;
+
+            color: #d9b84f;
+
+            background: rgba(207, 165, 53, .08);
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+
+        .nav-link {
+            color: rgba(247, 240, 218, .65);
+
+            text-decoration: none;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: .4px;
+
+            transition: .25s;
+        }
+
+
+        .nav-link:hover {
+            color: #e1bd55;
+        }
+
+
+        .menu-button {
+            border: none;
+
+            background: transparent;
+
+            color: #d9b84f;
+
+            font-size: 20px;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           TITLE
+        ===================================================== */
+
+        .title-section {
+            position: relative;
+
+            padding: 18px 80px 0;
+
+            text-align: center;
+
+            z-index: 10;
+        }
+
+
+        .small-label {
+            margin-bottom: 6px;
+
+            color: #cda943;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+        }
+
+
+        .main-title {
+            font-family: "Baloo 2", cursive;
+
+            font-size: clamp(43px, 5vw, 62px);
+
+            line-height: .9;
+
+            font-weight: 800;
+
+            color: #f7efd8;
+
+            letter-spacing: -1px;
+        }
+
+
+        .main-title span {
+            color: #d8b54c;
+        }
+
+
+        .title-line {
+            width: 230px;
+            height: 2px;
+
+            margin: 15px auto 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #d7b34b,
+                    transparent
+                );
+        }
+
+
+        /* =====================================================
+           MAIN CONTENT
+        ===================================================== */
+
+        .main-content {
+            position: relative;
+
+            width: 100%;
+
+            height: 390px;
+
+            padding: 28px 100px 10px;
+
+            display: grid;
+
+            grid-template-columns: 360px 1fr;
+
+            align-items: center;
+
+            gap: 90px;
+
+            z-index: 10;
+        }
+
+
+        /* =====================================================
+           LEFT AREA
+        ===================================================== */
+
+        .left-area {
+            position: relative;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        /* =====================================================
+           PHOTO
+        ===================================================== */
+
+        .photo-card {
+            position: relative;
+
+            width: 270px;
+            height: 220px;
+
+            padding: 9px;
+
+            background: #e8e1d0;
+
+            border-radius: 7px;
+
+            transform: rotate(-3deg);
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, .5);
+
+            z-index: 5;
+        }
+
+
+        .photo-card::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 5px;
+
+            border: 1px solid #bd9632;
+
+            pointer-events: none;
+        }
+
+
+        .photo-tape {
+            position: absolute;
+
+            top: -12px;
+            left: 92px;
+
+            width: 78px;
+            height: 25px;
+
+            background: rgba(210, 182, 122, .82);
+
+            transform: rotate(3deg);
+
+            z-index: 10;
+        }
+
+
+        .photo-frame {
+            width: 100%;
+            height: 175px;
+
+            overflow: hidden;
+
+            background: #111;
+
+            border: 3px solid #191919;
+
+            outline: 1px solid #cba63e;
+        }
+
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            transition: .4s;
+        }
+
+
+        .photo-card:hover img {
+            transform: scale(1.04);
+        }
+
+
+        .photo-caption {
+            padding-top: 7px;
+
+            text-align: center;
+
+            color: #161616;
+
+            font-family: "Baloo 2", cursive;
+
+            font-size: 14px;
+
+            font-weight: 800;
+        }
+
+
+        /* =====================================================
+           LITTLE DECOR UNDER PHOTO
+        ===================================================== */
+
+        .photo-note {
+            margin-top: 17px;
+
+            color: #bfa35b;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            letter-spacing: .5px;
+        }
+
+
+        /* =====================================================
+           RIGHT AREA
+        ===================================================== */
+
+        .right-area {
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            gap: 22px;
+
+            max-width: 490px;
+        }
+
+
+        /* =====================================================
+           SPEECH BUBBLE / QUOTE
+        ===================================================== */
+
+        .speech-bubble {
+            position: relative;
+
+            width: 100%;
+
+            padding: 27px 34px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d9b34c,
+                    #b88b24
+                );
+
+            color: #0b0b0b;
+
+            border-radius: 20px 20px 20px 6px;
+
+            box-shadow:
+                0 12px 28px rgba(0, 0, 0, .35);
+
+            transform: rotate(1deg);
+        }
+
+
+        .speech-bubble::after {
+            content: "";
+
+            position: absolute;
+
+            left: 30px;
+
+            bottom: -17px;
+
+            width: 30px;
+            height: 25px;
+
+            background: #b88b24;
+
+            clip-path:
+                polygon(0 0, 100% 0, 0 100%);
+        }
+
+
+        .speech-text {
+            font-family: "Baloo 2", cursive;
+
+            font-size: 28px;
+
+            line-height: 1.05;
+
+            font-weight: 800;
+        }
+
+
+        /* =====================================================
+           MESSAGE
+        ===================================================== */
+
+        .important-message {
+            padding-left: 8px;
+
+            color: rgba(247, 240, 218, .82);
+
+            font-size: 14px;
+
+            line-height: 1.75;
+
+            font-weight: 500;
+        }
+
+
+        .important-message strong {
+            color: #e0bb51;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           BREAK NOTE
+        ===================================================== */
+
+        .yellow-note {
+            align-self: flex-start;
+
+            padding: 11px 22px;
+
+            background: #eee19b;
+
+            color: #25220e;
+
+            border-radius: 5px;
+
+            font-family: "Baloo 2", cursive;
+
+            font-size: 14px;
+
+            line-height: 1.1;
+
+            font-weight: 800;
+
+            transform: rotate(-2deg);
+
+            box-shadow:
+                5px 7px 0 rgba(201, 163, 57, .25);
+        }
+
+
+        /* =====================================================
+           DECORATIVE STICKERS
+        ===================================================== */
+
+        .sticker {
+            position: absolute;
+
+            color: #d7b44c;
+
+            z-index: 4;
+
+            user-select: none;
+
+            pointer-events: none;
+
+            animation: floatSticker 4s ease-in-out infinite;
+        }
+
+
+        .sticker-1 {
+            left: 65px;
+            top: 165px;
+
+            font-size: 25px;
+
+            transform: rotate(-15deg);
+        }
+
+
+        .sticker-2 {
+            right: 65px;
+            top: 185px;
+
+            font-size: 22px;
+
+            animation-delay: .8s;
+        }
+
+
+        .sticker-3 {
+            right: 75px;
+            bottom: 155px;
+
+            font-size: 29px;
+
+            animation-delay: 1.2s;
+        }
+
+
+        .sticker-4 {
+            left: 75px;
+            bottom: 150px;
+
+            font-size: 20px;
+
+            animation-delay: 1.8s;
+        }
+
+
+        .sticker-5 {
+            left: 430px;
+            bottom: 92px;
+
+            font-size: 16px;
+
+            animation-delay: 2.2s;
+        }
+
+
+        .sticker-6 {
+            right: 420px;
+            top: 105px;
+
+            font-size: 13px;
+
+            animation-delay: 2.7s;
+        }
+
+
+        @keyframes floatSticker {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(-6px) rotate(4deg);
+            }
+        }
+
+
+        /* =====================================================
+           CAT DECOR
+        ===================================================== */
+
+        .cat {
+            position: absolute;
+
+            left: 405px;
+            bottom: 72px;
+
+            font-size: 32px;
+
+            filter:
+                drop-shadow(
+                    0 5px 8px rgba(0, 0, 0, .35)
+                );
+
+            animation: catFloat 3s ease-in-out infinite;
+
+            z-index: 8;
+        }
+
+
+        @keyframes catFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-3deg);
+            }
+
+            50% {
+                transform: translateY(-7px) rotate(3deg);
+            }
+        }
+
+
+        /* =====================================================
+           BOTTOM NAV
+        ===================================================== */
+
+        .bottom-nav {
+            position: absolute;
+
+            left: 50px;
+            right: 50px;
+            bottom: 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            z-index: 100;
+        }
+
+
+        .back-button,
+        .surprise-button {
+            height: 40px;
+
+            border-radius: 22px;
+
+            font-family: "Plus Jakarta Sans", sans-serif;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .5px;
+
+            cursor: pointer;
+
+            transition: .25s;
+        }
+
+
+        .back-button {
+            width: 110px;
+
+            color: #e0bb52;
+
+            background: transparent;
+
+            border: 1px solid rgba(216, 178, 66, .7);
+        }
+
+
+        .back-button:hover {
+            color: #0a0a0a;
+
+            background: #d9b44d;
+
+            transform: translateY(-2px);
+        }
+
+
+        .surprise-button {
+            width: 190px;
+
+            color: #101010;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e4c25c,
+                    #b98d28
+                );
+
+            border: 1px solid #e4c25c;
+
+            box-shadow:
+                0 5px 0 #785a17;
+        }
+
+
+        .surprise-button:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 0 #785a17;
+        }
+
+
+        .surprise-button:active {
+            transform: translateY(2px);
+
+            box-shadow:
+                0 2px 0 #785a17;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 700px) {
+
+            body {
+                background: #070707;
+            }
+
+
+            .page {
+                min-height: 100dvh;
+
+                padding: 0;
+            }
+
+
+            .important-card {
+                width: 100vw;
+                height: 100dvh;
+
+                min-height: 0;
+
+                border-radius: 0;
+
+                border-left: none;
+                border-right: none;
+            }
+
+
+            .important-card::before {
+                inset: 9px;
+
+                border-radius: 13px;
+            }
+
+
+            .important-card::after {
+                inset: 15px;
+
+                border-radius: 10px;
+            }
+
+
+            .corner {
+                width: 20px;
+                height: 20px;
+            }
+
+
+            .corner-tl {
+                top: 20px;
+                left: 20px;
+            }
+
+
+            .corner-tr {
+                top: 20px;
+                right: 20px;
+            }
+
+
+            .corner-bl {
+                bottom: 20px;
+                left: 20px;
+            }
+
+
+            .corner-br {
+                bottom: 20px;
+                right: 20px;
+            }
+
+
+            /* NAV */
+
+            .top-nav {
+                height: 58px;
+
+                gap: 14px;
+
+                padding: 0 23px;
+            }
+
+
+            .page-number {
+                left: 25px;
+                top: 18px;
+
+                padding: 6px 10px;
+
+                font-size: 8px;
+            }
+
+
+            .nav-link {
+                font-size: 7px;
+            }
+
+
+            .menu-button {
+                font-size: 17px;
+            }
+
+
+            /* TITLE */
+
+            .title-section {
+                padding: 18px 25px 0;
+            }
+
+
+            .small-label {
+                font-size: 8px;
+
+                letter-spacing: 2.5px;
+
+                margin-bottom: 8px;
+            }
+
+
+            .main-title {
+                font-size: 40px;
+
+                line-height: .9;
+            }
+
+
+            .title-line {
+                width: 150px;
+
+                margin-top: 12px;
+            }
+
+
+            /* CONTENT */
+
+            .main-content {
+                height: auto;
+
+                padding: 24px 28px 90px;
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 25px;
+
+                overflow-y: auto;
+            }
+
+
+            .left-area {
+                width: 100%;
+            }
+
+
+            .photo-card {
+                width: 220px;
+                height: 178px;
+            }
+
+
+            .photo-frame {
+                height: 139px;
+            }
+
+
+            .photo-caption {
+                font-size: 11px;
+            }
+
+
+            .photo-note {
+                margin-top: 11px;
+
+                font-size: 9px;
+            }
+
+
+            .right-area {
+                width: 100%;
+
+                align-items: center;
+
+                gap: 17px;
+            }
+
+
+            .speech-bubble {
+                width: 90%;
+
+                padding: 20px 22px;
+            }
+
+
+            .speech-text {
+                font-size: 21px;
+            }
+
+
+            .important-message {
+                width: 90%;
+
+                padding: 0;
+
+                text-align: center;
+
+                font-size: 11px;
+
+                line-height: 1.6;
+            }
+
+
+            .yellow-note {
+                font-size: 11px;
+
+                padding: 9px 17px;
+            }
+
+
+            /* DECOR */
+
+            .sticker-1 {
+                left: 20px;
+                top: 180px;
+
+                font-size: 18px;
+            }
+
+
+            .sticker-2 {
+                right: 18px;
+                top: 190px;
+
+                font-size: 18px;
+            }
+
+
+            .sticker-3 {
+                right: 22px;
+                bottom: 130px;
+
+                font-size: 22px;
+            }
+
+
+            .sticker-4 {
+                left: 20px;
+                bottom: 135px;
+
+                font-size: 18px;
+            }
+
+
+            .sticker-5,
+            .sticker-6 {
+                display: none;
+            }
+
+
+            .cat {
+                left: auto;
+                right: 28px;
+
+                bottom: 92px;
+
+                font-size: 25px;
+            }
+
+
+            /* BUTTON */
+
+            .bottom-nav {
+                left: 23px;
+                right: 23px;
+                bottom: 22px;
+            }
+
+
+            .back-button {
+                width: 85px;
+
+                height: 34px;
+
+                font-size: 8px;
+            }
+
+
+            .surprise-button {
+                width: 155px;
+
+                height: 34px;
+
+                font-size: 8px;
+            }
+
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+        ===================================================== */
+
+        @media (max-width: 390px) {
+
+            .top-nav {
+                gap: 9px;
+            }
+
+
+            .nav-link {
+                font-size: 6px;
+            }
+
+
+            .main-title {
+                font-size: 35px;
+            }
+
+
+            .main-content {
+                padding-top: 19px;
+            }
+
+
+            .photo-card {
+                width: 200px;
+                height: 164px;
+            }
+
+
+            .photo-frame {
+                height: 127px;
+            }
+
+
+            .speech-bubble {
+                width: 94%;
+            }
+
+
+            .speech-text {
+                font-size: 18px;
+            }
+
+
+            .important-message {
+                font-size: 10px;
+            }
+
+
+            .surprise-button {
+                width: 145px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <div class="important-card">
+
+
+        <!-- CORNERS -->
+
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+
+        <!-- DECORATIVE STICKERS -->
+
+        <div class="sticker sticker-1">✦</div>
+        <div class="sticker sticker-2">☆</div>
+        <div class="sticker sticker-3">✧</div>
+        <div class="sticker sticker-4">★</div>
+        <div class="sticker sticker-5">· ✦ ·</div>
+        <div class="sticker sticker-6">✧</div>
+
+
+        <!-- =================================================
+             NAVBAR
+        ================================================== -->
+
+        <nav class="top-nav">
+
+
+            <a href="awal.html" class="nav-link">
+                Home
+            </a>
+
+
+            <a href="3.html" class="nav-link">
+                Massage
+            </a>
+
+
+            <a href="6.html" class="nav-link">
+                Surprise
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             TITLE
+        ================================================== -->
+
+        <section class="title-section">
+
+            <div class="small-label">
+                A little reminder
+            </div>
+
+
+            <div class="main-title">
+
+                Okay,
+                <span>This One Is Important!</span>
+
+            </div>
+
+
+            <div class="title-line"></div>
+
+        </section>
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- LEFT -->
+
+            <section class="left-area">
+
+
+                <div class="photo-card">
+
+                    <div class="photo-tape"></div>
+
+
+                    <div class="photo-frame">
+
+                        <img
+                            id="importantPhoto"
+                            src="/foto/plrd.jpeg"
+                            alt="Mas Ivan">
+
+                    </div>
+
+
+                    <div class="photo-caption">
+                        Take care of yourself ♡
+                    </div>
+
+                </div>
+
+
+                <div class="photo-note">
+                    Keep up the great spirit for the future..
+                </div>
+
+
+            </section>
+
+
+
+            <!-- RIGHT -->
+
+            <section class="right-area">
+
+
+                <div class="speech-bubble">
+
+                    <div class="speech-text">
+
+                        You're doing
+                        <br>
+                        better than you think..
+
+                    </div>
+
+                </div>
+
+
+                <div class="yellow-note">
+
+                    It's Okay
+                    <br>
+                    to Take a Break ♡
+
+                </div>
+
+
+                <div class="important-message">
+
+                    Kalau akhir-akhir ini terasa berat,
+                    <br>
+
+                    nggak apa-apa, istirahat dulu.
+                    <br>
+
+                    Semua proses tetap berarti,
+                    <br>
+
+                    dan kamu sudah sejauh ini
+                    <br>
+
+                    <strong>itu luar biasa.</strong>
+                    <br>
+
+                   Keep the spirit!
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+        <!-- CAT DECOR -->
+
+        <div class="cat">
+            😛​😛
+        </div>
+
+
+        <!-- =================================================
+             BOTTOM BUTTONS
+        ================================================== -->
+
+        <div class="bottom-nav">
+
+
+            <button
+                type="button"
+                class="back-button"
+                onclick="goBack()">
+
+                ← BACK
+
+            </button>
+
+
+            <button
+                type="button"
+                class="surprise-button"
+                onclick="nextPage()">
+
+                PENCET LAGI MAS 🎁
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script>
+
+
+    /* =====================================================
+       BACK
+    ===================================================== */
+
+    function goBack() {
+
+        window.location.href = "4.html";
+
+    }
+
+
+
+    /* =====================================================
+       NEXT
+    ===================================================== */
+
+    function nextPage() {
+
+        window.location.href = "6.html";
+
+    }
+
+
+
+    /* =====================================================
+       PHOTO FALLBACK
+    ===================================================== */
+
+    const importantPhoto =
+        document.getElementById("importantPhoto");
+
+
+    const photoList = [
+
+        "foto/laptop.jpg",
+
+        "foto/gbt_3.jpg",
+
+        "foto/gbt_2.jpg",
+
+        "foto/gbt_1.jpg"
+
+    ];
+
+
+    let photoIndex = 0;
+
+
+    importantPhoto.addEventListener(
+        "error",
+        function () {
+
+            photoIndex++;
+
+
+            if (
+                photoIndex <
+                photoList.length
+            ) {
+
+                importantPhoto.src =
+                    photoList[photoIndex];
+
+            }
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>
